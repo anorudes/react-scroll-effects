@@ -19,7 +19,6 @@ export default class ScrollEffect extends React.Component {
     let elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
         scrollPositionY = window.scrollY,
         windowHeight = window.innerHeight;
-    elementPositionY = $(element).offset().top;
     if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset*1) {
       if (!this.state.animated) {
         this.setState({animated: true});
