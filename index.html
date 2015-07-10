@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="../bower_components/animate.css/animate.min.css">
+    <title></title>
+    <style>
+      *  {
+        box-sizing: border-box;
+        font-family: "Verdana";
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        height: 500px;
+        counter-increment: section;
+        padding: 100px;
+        background: navy;
+        position: relative;
+      }
+      section:nth-child(2n+2) {
+        background: #ccc;
+      }
+      section:after {
+        content: counter(section);
+        font-size: 40px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: white;
+      }
+      section:nth-child(2n+2):after {
+        color: navy;
+      }
+      .bottom {
+        position: absolute;
+        bottom: 100px;
+        left: 100px;
+      }
+      section:nth-child(2n+2) .bottom {
+        left: auto;
+        right: 100px;
+      }
+      .element {
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 24px;
+        background: green;
+      }
+      section:nth-child(2n+2) .element {
+        left: auto;
+        background: red;
+      }
+    </style>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+<script type="text/javascript" src="bundle.js"></script>
+</html>
+</div>
