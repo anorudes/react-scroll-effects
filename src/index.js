@@ -2,8 +2,8 @@ import React from 'react';
 import ScrollEffect from 'react-scroll-effects';
 
 class App {
-  callbackAnimateElement3() {  /* example callback for 3 element */
-    alert('callback animate of 3 element');
+  callbackAnimateElement4() {  /* example callback for 3 element */
+    alert('callback animate of 4 element');
   }
   render() {
     return (
@@ -19,13 +19,28 @@ class App {
           </ScrollEffect>
         </section>
         <section>
-          <ScrollEffect className="element" animate="bounceInUp" callback={this.callbackAnimateElement3.bind(this)}> { /* bounceInUp */ }
-            <span>3</span>
+          <ScrollEffect animate="zoomInUp" queueClass="queue" duration="2" queueDuration=".5"> { /* full */ }
+            <ul>
+              <li className="queue">
+                test
+              </li>
+              <li className="queue">
+                test
+              </li>
+              <li className="queue">
+                test
+              </li>
+            </ul>
+          </ScrollEffect>
+        </section>
+        <section>
+          <ScrollEffect className="element" animate="bounceInUp" callback={this.callbackAnimateElement4.bind(this)}> { /* callback */ }
+            <span>4</span>
           </ScrollEffect>
         </section>
         <section>
           <ScrollEffect className="element" animate="fadeInUp" offset="-500"> { /* zoomInUp with offset */ }
-            <span>4</span>
+            <span>5</span>
           </ScrollEffect>
         </section>
       </div>
