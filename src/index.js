@@ -9,22 +9,22 @@ class App {
     return (
       <div>
         <section>
-          <ScrollEffect className="element" name="fadeInUp"> { /* fadeInUp */ }
+          <ScrollEffect className="element" animate="fadeInUp"> { /* fadeInUp */ }
             <span>1</span>
           </ScrollEffect>
         </section>
         <section>
-          <ScrollEffect className="element test" name="slideInRight" duration="3"> { /* slideInRight, custom duration, 2 classes */ }
+          <ScrollEffect className="element test" animate="slideInRight" duration="3"> { /* slideInRight, custom duration, 2 classes */ }
             <span>2</span>
           </ScrollEffect>
         </section>
         <section>
-          <ScrollEffect className="element" name="bounceInUp" callback={this.callbackAnimateElement3.bind(this)}> { /* bounceInUp */ }
+          <ScrollEffect className="element" animate="bounceInUp" callback={this.callbackAnimateElement3.bind(this)}> { /* bounceInUp */ }
             <span>3</span>
           </ScrollEffect>
         </section>
         <section>
-          <ScrollEffect className="element" name="fadeInUp" offset="-500"> { /* zoomInUp with offset */ }
+          <ScrollEffect className="element" animate="fadeInUp" offset="-500"> { /* zoomInUp with offset */ }
             <span>4</span>
           </ScrollEffect>
         </section>
