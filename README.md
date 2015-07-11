@@ -18,7 +18,16 @@ import ScrollEffect from 'react-scroll-effect';
 
 { /* Simple: */ }
 <ScrollEffect animate="fadeInUp">
-  <span>test 1</span>
+  test 1
+</ScrollEffect>
+
+{ /* Simple: */ }
+<ScrollEffect animate="fadeInUp">
+  <div className="test">
+    <span>text</span>
+    <span>text</span>
+    <span>text</span>
+  </div>
 </ScrollEffect>
 
 { /* Full: */ }
