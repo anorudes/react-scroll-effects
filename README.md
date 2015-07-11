@@ -8,6 +8,7 @@ http://anorudes.github.io/React-Scroll-Effect/
 ``
 npm install react-scroll-effects --save
 ``
+<br />
 Include "animate.css" from https://daneden.github.io/animate.css/
 
 ## Usage:
