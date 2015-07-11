@@ -21904,7 +21904,7 @@ var App = (function () {
           null,
           _react2['default'].createElement(
             _reactScrollEffects2['default'],
-            { className: 'element', name: 'fadeInUp' },
+            { className: 'element', animate: 'fadeInUp' },
             ' ',
             _react2['default'].createElement(
               'span',
@@ -21918,7 +21918,7 @@ var App = (function () {
           null,
           _react2['default'].createElement(
             _reactScrollEffects2['default'],
-            { className: 'element test', name: 'slideInRight', duration: '3' },
+            { className: 'element test', animate: 'slideInRight', duration: '3' },
             ' ',
             _react2['default'].createElement(
               'span',
@@ -21932,7 +21932,7 @@ var App = (function () {
           null,
           _react2['default'].createElement(
             _reactScrollEffects2['default'],
-            { className: 'element', name: 'bounceInUp', callback: this.callbackAnimateElement3.bind(this) },
+            { className: 'element', animate: 'bounceInUp', callback: this.callbackAnimateElement3.bind(this) },
             ' ',
             _react2['default'].createElement(
               'span',
@@ -21946,7 +21946,7 @@ var App = (function () {
           null,
           _react2['default'].createElement(
             _reactScrollEffects2['default'],
-            { className: 'element', name: 'fadeInUp', offset: '-500' },
+            { className: 'element', animate: 'fadeInUp', offset: '-500' },
             ' ',
             _react2['default'].createElement(
               'span',

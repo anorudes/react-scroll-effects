@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-effects",
-  "version": "1.0.21",
+  "version": "1.0.3",
   "description": "React component to animate elements on scroll with animate.css",
   "main": "dist/scrollEffects.min.js",
   "scripts": {
