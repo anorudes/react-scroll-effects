@@ -59,8 +59,3 @@ $ gulp
 ## Depending
 https://daneden.github.io/animate.css/
 
-
-## Build
-```
-$ gulp
-```
