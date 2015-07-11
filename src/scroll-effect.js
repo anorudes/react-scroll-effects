@@ -2,8 +2,11 @@ import React from 'react/addons';
 
 export default class ScrollEffect extends React.Component {
   static defaultProps = {
-    name: "fadeInUp",
-    offset: 0
+    animate: "fadeInUp",
+    offset: 0,
+    className: "",
+    duration: 1,
+    callback: () => { }
   }
   constructor() {
     super();
@@ -22,16 +25,28 @@ export default class ScrollEffect extends React.Component {
     if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset*1) {
       if (!this.state.animated) {
         this.setState({animated: true});
+        setTimeout(() => {
+          this.props.callback();
+        }, this.props.duration * 1000)
       }
     }
   }
   render() {
+    const {props, state} = this;
     let cx = React.addons.classSet;
     let classes = cx({
       'animated': true,
-      [this.props.name]: this.state.animated
+      [props.animate]: state.animated
     });
-    let style = this.state.animated ? { } : { visibility: 'hidden' };
-    return <div className={classes} style={style}>{this.props.children}</div>
+    let customClasses = props.className.split(' ');
+    for (let customClass of customClasses) {
+        classes += ' ' + customClass;
+    }
+    let style = state.animated ? { } : { visibility: 'hidden' };
+    if (props.duration !== '') {
+      style.WebkitAnimationDuration = props.duration+'s';
+      style.animationDuration = props.duration+'s';
+    }
+    return <div className={classes} style={style}>{props.children}</div>
   }
 }

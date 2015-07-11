@@ -2,36 +2,31 @@ import React from 'react/addons';
 import ScrollEffect from '../src/scroll-effect';
 
 class App {
+  callbackAnimateElement3() {  /* example callback for 3 element */
+    alert('callback animate of 3 element');
+  }
   render() {
     return (
       <div>
         <section>
-          <div className="bottom">
-            <ScrollEffect name="fadeInUp"> { /* fadeInUp */ }
-              <div className="element">1</div>
-            </ScrollEffect>
-          </div>
+          <ScrollEffect className="element" name="fadeInUp"> { /* fadeInUp */ }
+            <span>1</span>
+          </ScrollEffect>
         </section>
         <section>
-          <div className="bottom">
-            <ScrollEffect name="slideInRight"> { /* slideInRight */ }
-              <div className="element">2</div>
-            </ScrollEffect>
-          </div>
+          <ScrollEffect className="element test" name="slideInRight" duration="3"> { /* slideInRight, custom duration, 2 classes */ }
+            <span>2</span>
+          </ScrollEffect>
         </section>
         <section>
-          <div className="bottom">
-            <ScrollEffect name="bounceInUp"> { /* bounceInUp */ }
-              <div className="element">3</div>
-            </ScrollEffect>
-          </div>
+          <ScrollEffect className="element" name="bounceInUp" callback={this.callbackAnimateElement3.bind(this)}> { /* bounceInUp */ }
+            <span>3</span>
+          </ScrollEffect>
         </section>
         <section>
-          <div className="bottom">
-            <ScrollEffect name="fadeInUp" offset="-500"> { /* zoomInUp with offset */ }
-              <div className="element">4</div>
-            </ScrollEffect>
-          </div>
+          <ScrollEffect className="element" name="fadeInUp" offset="-500"> { /* zoomInUp with offset */ }
+            <span>4</span>
+          </ScrollEffect>
         </section>
       </div>
     );

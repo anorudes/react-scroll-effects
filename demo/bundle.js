@@ -21,6 +21,12 @@ var App = (function () {
   }
 
   _createClass(App, [{
+    key: 'callbackAnimateElement3',
+    value: function callbackAnimateElement3() {
+      /* example callback for 3 element */
+      alert('callback animate of 3 element');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _reactAddons2['default'].createElement(
@@ -30,17 +36,13 @@ var App = (function () {
           'section',
           null,
           _reactAddons2['default'].createElement(
-            'div',
-            { className: 'bottom' },
+            _srcScrollEffect2['default'],
+            { className: 'element', name: 'fadeInUp' },
+            ' ',
             _reactAddons2['default'].createElement(
-              _srcScrollEffect2['default'],
-              { name: 'fadeInUp' },
-              ' ',
-              _reactAddons2['default'].createElement(
-                'div',
-                { className: 'element' },
-                '1'
-              )
+              'span',
+              null,
+              '1'
             )
           )
         ),
@@ -48,17 +50,13 @@ var App = (function () {
           'section',
           null,
           _reactAddons2['default'].createElement(
-            'div',
-            { className: 'bottom' },
+            _srcScrollEffect2['default'],
+            { className: 'element test', name: 'slideInRight', duration: '3' },
+            ' ',
             _reactAddons2['default'].createElement(
-              _srcScrollEffect2['default'],
-              { name: 'slideInRight' },
-              ' ',
-              _reactAddons2['default'].createElement(
-                'div',
-                { className: 'element' },
-                '2'
-              )
+              'span',
+              null,
+              '2'
             )
           )
         ),
@@ -66,17 +64,13 @@ var App = (function () {
           'section',
           null,
           _reactAddons2['default'].createElement(
-            'div',
-            { className: 'bottom' },
+            _srcScrollEffect2['default'],
+            { className: 'element', name: 'bounceInUp', callback: this.callbackAnimateElement3.bind(this) },
+            ' ',
             _reactAddons2['default'].createElement(
-              _srcScrollEffect2['default'],
-              { name: 'bounceInUp' },
-              ' ',
-              _reactAddons2['default'].createElement(
-                'div',
-                { className: 'element' },
-                '3'
-              )
+              'span',
+              null,
+              '3'
             )
           )
         ),
@@ -84,17 +78,13 @@ var App = (function () {
           'section',
           null,
           _reactAddons2['default'].createElement(
-            'div',
-            { className: 'bottom' },
+            _srcScrollEffect2['default'],
+            { className: 'element', name: 'fadeInUp', offset: '-500' },
+            ' ',
             _reactAddons2['default'].createElement(
-              _srcScrollEffect2['default'],
-              { name: 'fadeInUp', offset: '-500' },
-              ' ',
-              _reactAddons2['default'].createElement(
-                'div',
-                { className: 'element' },
-                '4'
-              )
+              'span',
+              null,
+              '4'
             )
           )
         )
@@ -106,7 +96,7 @@ var App = (function () {
 })();
 
 _reactAddons2['default'].render(_reactAddons2['default'].createElement(App, null), document.getElementById('app'));
-/* fadeInUp */ /* slideInRight */ /* bounceInUp */ /* zoomInUp with offset */
+/* fadeInUp */ /* slideInRight, custom duration, 2 classes */ /* bounceInUp */ /* zoomInUp with offset */
 
 },{"../src/scroll-effect":175,"react/addons":3}],2:[function(require,module,exports){
 // shim for using process in browser
@@ -21971,25 +21961,25 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 },{"./emptyFunction":132,"_process":2}],175:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-var _reactAddons = require('react/addons');
+var _reactAddons = require("react/addons");
 
 var _reactAddons2 = _interopRequireDefault(_reactAddons);
 
@@ -21997,10 +21987,13 @@ var ScrollEffect = (function (_React$Component) {
   _inherits(ScrollEffect, _React$Component);
 
   _createClass(ScrollEffect, null, [{
-    key: 'defaultProps',
+    key: "defaultProps",
     value: {
-      name: 'fadeInUp',
-      offset: 0
+      animate: "fadeInUp",
+      offset: 0,
+      className: "",
+      duration: 1,
+      callback: function callback() {}
     },
     enumerable: true
   }]);
@@ -22008,20 +22001,22 @@ var ScrollEffect = (function (_React$Component) {
   function ScrollEffect() {
     _classCallCheck(this, ScrollEffect);
 
-    _get(Object.getPrototypeOf(ScrollEffect.prototype), 'constructor', this).call(this);
+    _get(Object.getPrototypeOf(ScrollEffect.prototype), "constructor", this).call(this);
     this.state = { animated: false };
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    window.addEventListener("scroll", this.handleScroll.bind(this));
   }
 
   _createClass(ScrollEffect, [{
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll.bind(this));
+      window.removeEventListener("scroll", this.handleScroll.bind(this));
     }
   }, {
-    key: 'handleScroll',
+    key: "handleScroll",
     value: function handleScroll(e) {
-      var element = _reactAddons2['default'].findDOMNode(this);
+      var _this = this;
+
+      var element = _reactAddons2["default"].findDOMNode(this);
 
       var elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
           scrollPositionY = window.scrollY,
@@ -22029,29 +22024,65 @@ var ScrollEffect = (function (_React$Component) {
       if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset * 1) {
         if (!this.state.animated) {
           this.setState({ animated: true });
+          setTimeout(function () {
+            _this.props.callback();
+          }, this.props.duration * 1000);
         }
       }
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
-      var cx = _reactAddons2['default'].addons.classSet;
+      var props = this.props;
+      var state = this.state;
+
+      var cx = _reactAddons2["default"].addons.classSet;
       var classes = cx(_defineProperty({
-        'animated': true
-      }, this.props.name, this.state.animated));
-      var style = this.state.animated ? {} : { visibility: 'hidden' };
-      return _reactAddons2['default'].createElement(
-        'div',
+        "animated": true
+      }, props.animate, state.animated));
+      var customClasses = props.className.split(" ");
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = customClasses[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var customClass = _step.value;
+
+          classes += " " + customClass;
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"]) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      var style = state.animated ? {} : { visibility: "hidden" };
+      if (props.duration !== "") {
+        style.WebkitAnimationDuration = props.duration + "s";
+        style.animationDuration = props.duration + "s";
+      }
+      return _reactAddons2["default"].createElement(
+        "div",
         { className: classes, style: style },
-        this.props.children
+        props.children
       );
     }
   }]);
 
   return ScrollEffect;
-})(_reactAddons2['default'].Component);
+})(_reactAddons2["default"].Component);
 
-exports['default'] = ScrollEffect;
-module.exports = exports['default'];
+exports["default"] = ScrollEffect;
+module.exports = exports["default"];
 
 },{"react/addons":3}]},{},[1]);
