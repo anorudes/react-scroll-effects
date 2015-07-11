@@ -36,15 +36,7 @@ import ScrollEffect from 'react-scroll-effect';
   </div>
 </ScrollEffect>
 
-<ScrollEffect className="element otherClass" animate="slideInRight" offset="-500" duration="2" callback={this.callbackAnimate.bind(this)}>
-  <div className="test">
-    <span>text</span>
-    <span>text</span>
-    <span>text</span>
-  </div>
-</ScrollEffect>
-
-<ScrollEffect animate="zoomInUp" queueClass="queue" duration="2" queueDuration=".5"> {
+<ScrollEffect animate="zoomInUp" queueClass="queue" duration="2" queueDuration=".5">
   <ul>
     <li className="queue">
       test
@@ -63,8 +55,8 @@ import ScrollEffect from 'react-scroll-effect';
 <b>offset</b> - By default, animation is activated when (scrollPositionY + window.height / 2) >= (elementPositionTop). But you can specify offset.<br />
 <b>className</b> - Your class for block. You can specify one or multiple classes separated by a space.<br />
 <b>duration</b> - Animate duration seconds.<br />
-<b>queueClass</b> - Class name for queue. See the demo page (third block).
-<b>queueDuration</b> - Queue interval.
+<b>queueClass</b> - Class name for queue. See the demo page (third block).<br />
+<b>queueDuration</b> - Queue interval.<br />
 <b>callback</b> - Callback function.
 
 ## Files:
