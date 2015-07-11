@@ -31,7 +31,7 @@ import ScrollEffect from 'react-scroll-effect';
 </ScrollEffect>
 
 { /* Full: */ }
-<ScrollEffect className="element" animate="slideInRight" offset="-500" duration="2" callback={this.callbackAnimate.bind(this)}>
+<ScrollEffect className="element otherClass" animate="slideInRight" offset="-500" duration="2" callback={this.callbackAnimate.bind(this)}>
   <div className="test">
     <span>text</span>
     <span>text</span>
@@ -42,7 +42,7 @@ import ScrollEffect from 'react-scroll-effect';
 ```
 ##Properties:
 <b>offset</b> - By default, animation is activated when (scrollPositionY + window.height / 2) >= (elementPositionTop). But you can specify offset.<br />
-<b>className</b> - Your class for custom styles. For example: ".element { position: absolute; bottom: 100px }" You can specify one or multiple classes separated by a space.<br />
+<b>className</b> - Your class for block. You can specify one or multiple classes separated by a space.<br />
 <b>duration</b> - Animate duration seconds.<br />
 <b>callback</b> - Callback function.
 
