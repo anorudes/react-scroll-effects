@@ -18,12 +18,16 @@ import ScrollEffect from 'react-scroll-effect';
 
 { /* Simple: */ }
 <ScrollEffect animate="fadeInUp">
-  Test
+  <span>test 1</span>
 </ScrollEffect>
 
-{ /* All Props: */ }
+{ /* Full: */ }
 <ScrollEffect className="element" animate="slideInRight" offset="-500" duration="2" callback={this.callbackAnimate.bind(this)}>
-  Test 2
+  <div className="test">
+    <span>text</span>
+    <span>text</span>
+    <span>text</span>
+  </div>
 </ScrollEffect>
 
 ```
