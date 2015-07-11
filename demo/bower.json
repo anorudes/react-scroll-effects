@@ -1,0 +1,12 @@
+{
+  "name": "demo reactScrollEffects",
+  "version": "0.0.0",
+  "homepage": "https://github.com/anorudes/React-Scroll-Effect",
+  "authors": [
+    "Maxim Varovin <anorudes@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "animate.css": "~3.3.0"
+  }
+}

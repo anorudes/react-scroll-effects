@@ -1,0 +1,22 @@
+{
+  "name": "react-scroll-effects-demo",
+  "version": "1.0.0",
+  "description": "React component to animate elements on scroll with animate.css",
+  "dependencies": {
+    "babel-core": "^5.6.17",
+    "babel-loader": "^5.3.1",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.6",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-react": "^3.0.1",
+    "node-libs-browser": "^0.5.2",
+    "react": "^0.13.3",
+    "react-scroll-effects": "^1.0.21",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.10.1"
+  }
+}

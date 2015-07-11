@@ -1,13 +1,6 @@
 import React from 'react/addons';
 
 export default class ScrollEffect extends React.Component {
-  static defaultProps = {
-    animate: "fadeInUp",
-    offset: 0,
-    className: "",
-    duration: 1,
-    callback: () => { }
-  }
   constructor() {
     super();
     this.state = { animated: false };
@@ -49,4 +42,12 @@ export default class ScrollEffect extends React.Component {
     }
     return <div className={classes} style={style}>{props.children}</div>
   }
+}
+
+ScrollEffect.defaultProps = {
+  animate: "fadeInUp",
+  offset: 0,
+  className: "",
+  duration: 1,
+  callback: () => { }
 }

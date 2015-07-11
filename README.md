@@ -4,8 +4,15 @@ React component to animate elements on scroll with animate.css
 ## Demo:
 http://anorudes.github.io/React-Scroll-Effect/
 
+## Install
+``
+npm install react-scroll-effects --save
+``
+
 ## Usage:
 ```
+import ScrollEffect from 'react-scroll-effect';
+
 { /* Simple: */ }
 <ScrollEffect animate="fadeInUp">
   Test
@@ -23,14 +30,13 @@ http://anorudes.github.io/React-Scroll-Effect/
 <b>duration</b> - Animate duration seconds.<br />
 <b>callback</b> - Callback function.
 
-## Folders:
-<b>component:</b> src/scroll-effect.js<br />
-<b>demo page:</b> demo/<br />
+## Files:
+<b>src/**</b> - component<br />
+<b>demo/**</b> - demo page. For build: "bower install && npm install"
 
 ## Install
 ```
 $ npm install
-$ bower install
 ```
 
 ## Depending

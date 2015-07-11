@@ -1,30 +1,29 @@
 {
-  "name": "reactScrollEffect",
-  "version": "0.0.1",
-  "description": "",
+  "name": "react-scroll-effects",
+  "version": "1.0.21",
+  "description": "React component to animate elements on scroll with animate.css",
+  "main": "dist/scrollEffects.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anorudes/React-Scroll-Effect.git"
+  },
+  "keywords": [
+    "reactScrollEffects"
+  ],
+  "author": "anorudes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anorudes/React-Scroll-Effect/issues"
+  },
+  "homepage": "https://github.com/anorudes/React-Scroll-Effect",
   "dependencies": {
-    "babel-core": "^5.4.7",
-    "babel-eslint": "^3.1.18",
-    "babel-loader": "^5.1.3",
-    "babelify": "^6.0.2",
-    "browserify": "^10.2.6",
-    "buffer": "^3.2.2",
-    "gulp": "^3.8.11",
+    "babelify": "^6.1.2",
     "gulp-babel": "^5.1.0",
-    "gulp-concat": "^2.4.3",
-    "gulp-connect": "^2.2.0",
-    "gulp-load-plugins": "^0.5.3",
-    "gulp-notify": "^2.2.0",
-    "gulp-react": "^3.0.1",
-    "gulp-sourcemaps": "^1.5.1",
-    "gulp-streamify": "0.0.5",
-    "gulp-uglify": "^1.0.2",
-    "gulp-util": "^2.2.20",
-    "gulp-wrap": "^0.5.0",
-    "jsx-control-statements": "^1.0.4",
-    "node-libs-browser": "^0.5.2",
-    "react": "^0.13.3",
-    "react-mixin": "^1.2.3",
-    "vinyl-source-stream": "^1.1.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "react": "^0.13.3"
   }
 }
