@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react/addons';
 import ScrollEffect from 'react-scroll-effects';
 
 class App {

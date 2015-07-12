@@ -6,7 +6,7 @@ export default class ScrollEffect extends React.Component {
         this.state = {
             animated: false
         };
-        window.addEventListener('scroll', this.handleScroll.bind(this));
+        window.addEventListener('scroll', throttle(200, this.handleScroll.bind(this)));
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll.bind(this));
@@ -15,6 +15,7 @@ export default class ScrollEffect extends React.Component {
         this.setState({
             animated: true
         });
+        /* callback */
         setTimeout(() => {
             this.props.callback();
         }, this.props.duration * 1000);
@@ -33,6 +34,7 @@ export default class ScrollEffect extends React.Component {
           }, number * (this.props.queueDuration * 1000));
           number++;
         };
+        /* find queue classes */
         Array.prototype.forEach.call(element.childNodes, function(child) {
             Array.prototype.forEach.call(child.childNodes, function(ch) {
               if (checkClass(ch)) {
@@ -43,10 +45,13 @@ export default class ScrollEffect extends React.Component {
               setClass(child);
             }
         });
+        /* callback */
+        setTimeout(() => {
+            this.props.callback();
+        }, this.props.duration * 1000 * number);
     }
     handleScroll(e) {
         let element = React.findDOMNode(this);
-
         let elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
             scrollPositionY = window.scrollY,
             windowHeight = window.innerHeight;
@@ -77,14 +82,7 @@ export default class ScrollEffect extends React.Component {
             style.WebkitAnimationDuration = props.duration + 's';
             style.animationDuration = props.duration + 's';
         }
-        return <div className = {
-            classes
-        }
-        style = {
-            style
-        } > {
-            props.children
-        } < /div>
+        return <div className = {classes} style = {style}>{props.children}</div>
     }
 }
 
@@ -97,3 +95,14 @@ ScrollEffect.defaultProps = {
     queueClass: "",
     callback: () => {}
 }
+
+let throttle = (delay, callback) => {
+    let previousCall = new Date().getTime();
+    return () => {
+        let time = new Date().getTime();
+        if ((time - previousCall) >= delay) {
+            previousCall = time;
+            callback.apply(null, arguments);
+        }
+    };
+};

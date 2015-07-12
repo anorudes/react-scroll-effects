@@ -41,7 +41,7 @@ gulp.task("connect", function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/**', '../src/**'], ['build']);
+    gulp.watch(['src/**'], ['build']);
 });
 
 gulp.task('default', ['watch', 'build', 'connect']);
