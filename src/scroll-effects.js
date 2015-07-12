@@ -34,29 +34,29 @@ export default class ScrollEffect extends React.Component {
           }, number * (this.props.queueDuration * 1000));
           number++;
         };
-        /* find queue classes */
-        Array.prototype.forEach.call(element.childNodes, function(child) {
-            Array.prototype.forEach.call(child.childNodes, function(ch) {
-              if (checkClass(ch)) {
-                setClass(ch);
+        let findClass = (element) => {
+            Array.prototype.forEach.call(element.childNodes, function(child) {
+              findClass(child);
+              if (checkClass(child)) {
+                setClass(child);
               }
             });
-            if (checkClass(child)) {
-              setClass(child);
-            }
-        });
+        };
+        /* find queue classes */
+        findClass(element);
+
         /* callback */
         setTimeout(() => {
             this.props.callback();
         }, this.props.duration * 1000 * number);
     }
     handleScroll(e) {
-        let element = React.findDOMNode(this);
-        let elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
-            scrollPositionY = window.scrollY,
-            windowHeight = window.innerHeight;
-        if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset * 1) {
-            if (!this.state.animated) {
+        if (!this.state.animated) {
+            let element = React.findDOMNode(this);
+            let elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
+                scrollPositionY = window.scrollY,
+                windowHeight = window.innerHeight;
+            if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset * 1) {
                 this.setState({
                     animated: true
                 });
