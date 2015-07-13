@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-effects",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "React component to animate elements on scroll with animate.css",
   "main": "dist/scrollEffects.min.js",
   "scripts": {
@@ -11,7 +11,12 @@
     "url": "https://github.com/anorudes/React-Scroll-Effect.git"
   },
   "keywords": [
-    "reactScrollEffects"
+    "reactScrollEffects",
+    "react",
+    "reactJS",
+    "react-component",
+    "animate",
+    "scroll"
   ],
   "author": "anorudes",
   "license": "ISC",
@@ -19,11 +24,13 @@
     "url": "https://github.com/anorudes/React-Scroll-Effect/issues"
   },
   "homepage": "https://github.com/anorudes/React-Scroll-Effect",
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^0.13.2"
+  },
+  "devDependencies": {
     "babelify": "^6.1.2",
     "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.6.0",
-    "gulp-uglifyjs": "^0.6.2",
-    "react": "^0.13.3"
+    "gulp-uglifyjs": "^0.6.2"
   }
 }
