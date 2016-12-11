@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/anorudes/React-Scroll-Effect",
   "peerDependencies": {
-    "react": "^0.13.2"
+    "classnames": "^2.2.5",
+    "react": "^15.4.1"
   },
   "devDependencies": {
     "babelify": "^6.1.2",
