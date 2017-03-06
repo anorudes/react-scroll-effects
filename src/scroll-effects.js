@@ -66,7 +66,7 @@ export default class ScrollEffect extends React.Component {
         if (!this.state.animated) {
             let element = this.element;
             let elementPositionY = element.getBoundingClientRect().top + document.body.scrollTop,
-                scrollPositionY = window.scrollY,
+                scrollPositionY = window.scrollYOffset || window.scrollY,
                 windowHeight = window.innerHeight;
             if (scrollPositionY + windowHeight / 2 >= elementPositionY + this.props.offset * 1) {
                 this.setState({
@@ -80,7 +80,8 @@ export default class ScrollEffect extends React.Component {
     render() {
         const {
           props,
-          state } = this;
+          state 
+        } = this;
         let cx = classNames;
         let classes = cx({
             'animated': true,
@@ -94,7 +95,7 @@ export default class ScrollEffect extends React.Component {
             style.WebkitAnimationDuration = props.duration + 's';
             style.animationDuration = props.duration + 's';
         }
-        return <div className={classes} ref={(element => this.element = element)} style={style}>{ props.children }</div>
+        return <div className={classes} ref={element => this.element = element} style={style}>{ props.children }</div>
     }
 }
 
