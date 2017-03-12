@@ -14,7 +14,7 @@ Include "animate.css" from https://daneden.github.io/animate.css/
 ## Usage:
 
 ```
-import ScrollEffect from 'react-scroll-effect';
+import ScrollEffect from 'react-scroll-effects';
 
 <ScrollEffect animate="fadeInUp">
   test 1
