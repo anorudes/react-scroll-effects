@@ -29,7 +29,7 @@ export default class ScrollEffect extends Component {
     this.state = {
       animated: false
     };
-    if (window) {
+    if (window && window.addEventListener) {
       window.addEventListener('scroll', throttle(this.handleScroll.bind(this), 200));
     }
   }
@@ -39,7 +39,7 @@ export default class ScrollEffect extends Component {
   }
 
   componentWillUnmount() {
-    if (window) {
+    if (window && window.addEventListener) {
       window.removeEventListener('scroll', this.handleScroll.bind(this));
     }
   }
