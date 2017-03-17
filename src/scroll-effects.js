@@ -44,7 +44,7 @@ export default class ScrollEffect extends Component {
     }
   }
 
-
+// This is for the callback function to work.
   singleAnimate() {
     this.setState({
       animated: true
@@ -55,22 +55,23 @@ export default class ScrollEffect extends Component {
     }, this.props.duration * 1000);
   }
 
+// This is for the queueClass to work.
   queueAnimate() {
     const element = this.node;
     const checkClass = el =>
       el.className === this.props.queueClass;
     let number = 0;
     const setClass = (el) => {
-      const myElement = el;
-      myElement.style.visibility = 'hidden';
+      const element1 = el;
+      element1.style.visibility = 'hidden';
       setTimeout(() => {
-        myElement.style.visibility = 'visible';
-        myElement.className = `${myElement.className} animated ${this.props.animate}`;
+        element1.style.visibility = 'visible';
+        element1.className = `${element1.className} animated ${this.props.animate}`;
       }, number * (this.props.queueDuration * 1000));
       number += 1;
     };
-    const findClass = () => {
-      Array.prototype.forEach.call(element.childNodes, (child) => {
+    const findClass = (element2) => {
+      Array.prototype.forEach.call(element2.childNodes, (child) => {
         findClass(child);
         if (checkClass(child)) {
           setClass(child);
@@ -89,20 +90,20 @@ export default class ScrollEffect extends Component {
   handleScroll() {
     if (!this.state.animated) {
       const element = this.node;
-      console.log(element);
       const top = ScrollEffect.posTop();
-      console.log('top: ', top);
       const elementPositionY = element.getBoundingClientRect().top + top;
-      console.log('element top: ', element.getBoundingClientRect().top);
-      console.log('scrollTop: ', document.body.scrollTop);
-      console.log(elementPositionY);
       const scrollPositionY = window.scrollY ? window.scrollY : window.pageYOffset;
       const windowHeight = window.innerHeight;
-      console.log(windowHeight);
       if (scrollPositionY + (windowHeight) >= elementPositionY + (this.props.offset * 1)) {
         this.setState({
           animated: true
         });
+        if (this.props.queueClass) {
+          this.queueAnimate();
+        }
+        if (this.props.callback) {
+          this.singleAnimate();
+        }
       }
     }
   }
