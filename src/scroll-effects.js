@@ -2,16 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import throttle from 'lodash.throttle';
 import classNames from 'classnames';
 
-// const throttle = (callback, delay) => {
-//   let previousCall = new Date().getTime();
-//   return () => {
-//     const time = new Date().getTime();
-//     if ((time - previousCall) >= delay) {
-//       previousCall = time;
-//       callback(...arguments);
-//     }
-//   };
-// };
 export default class ScrollEffect extends Component {
   static posTop() {
     if (typeof window.pageYOffset !== 'undefined') {
@@ -44,7 +34,7 @@ export default class ScrollEffect extends Component {
     }
   }
 
-// This is for the callback function to work.
+  // This is for the callback function to work.
   singleAnimate() {
     this.setState({
       animated: true
@@ -55,7 +45,7 @@ export default class ScrollEffect extends Component {
     }, this.props.duration * 1000);
   }
 
-// This is for the queueClass to work.
+  // This is for the queueClass to work.
   queueAnimate() {
     const element = this.node;
     const checkClass = el =>
@@ -78,10 +68,11 @@ export default class ScrollEffect extends Component {
         }
       });
     };
-    /* find queue classes */
+
+    // Find queue classes 
     findClass(element);
 
-    /* callback */
+    // Callback 
     setTimeout(() => {
       this.props.callback();
     }, this.props.duration * 1000 * number);
