@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import throttle from 'lodash.throttle';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 export default class ScrollEffect extends Component {
   static posTop() {
