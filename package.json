@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-effects",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React component to animate elements on scroll with animate.css",
   "main": "dist/scrollEffects.min.js",
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "babelify": "^6.1.2",
+    "gulp": "^3.9.1",
     "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-uglifyjs": "^0.6.2"
