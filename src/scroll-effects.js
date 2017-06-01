@@ -120,7 +120,7 @@ export default class ScrollEffect extends Component {
     return (
       <div
         className={classes}
-        style={style}
+        style={{style, ...props.style}}
         ref={(node) => { this.node = node; }}
       >
         {props.children}
