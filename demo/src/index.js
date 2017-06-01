@@ -1,5 +1,5 @@
 import React from 'react/addons';
-import ScrollEffect from 'react-scroll-effects';
+import ScrollEffect from '../src/react-scroll-effects';
 
 class App {
   callbackAnimateElement4() {  /* example callback for 3 element */
