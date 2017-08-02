@@ -3,7 +3,7 @@ React component to animate elements on scroll with animate.css
 <br /><br />
 
 ## Demo page:
-http://anorudes.github.io/React-Scroll-Effect/
+http://anorudes.github.io/react-scroll-effects/
 
 ## Install
 ``
